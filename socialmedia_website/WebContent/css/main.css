@@ -1,0 +1,550 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: HelveticaNeue, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  box-sizing: border-box;
+}
+
+html *, html *:before, html *:after {
+  box-sizing:inherit;
+}
+
+/* BASIC LAYOUT */
+#container {
+	width: 1500px;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+	overflow: auto;
+}
+
+#header {
+	padding-top: 1.5%;
+	text-shadow: 1px 2px brown;
+	font-style: italic;
+	font-size: 36px;
+	font-weight: bold;
+	height: 10px;
+	line-height: 10px;
+	color: gold;
+	font-family: Impact, Charcoal, sans-serif;
+	width: 100%;
+}
+
+#logo {
+	margin-top: 1%;
+	background-color: salmon;
+	text-align: center;
+	color: ivory;
+	font-family: "Arial Black", Gadget, sans-serif;
+	padding-bottom: 8px;
+}
+
+#main {
+	background-color: seashell;
+	margin: auto;
+	height: 800px;
+	width: 100%;
+	padding-top: 3%;
+}
+
+#input {
+	width: 50%;
+	height: 350px;
+	background-color: salmon;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 50px;
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-bottom: 100px;
+	color: ivory;
+	text-align: center;
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+
+#profileHeader {
+	padding-top: 1%;
+	padding-bottom: 1%;
+	width: 100%;
+	height: 250px;
+	background-color: seashell;
+	margin-left: auto;
+	margin-right: auto;
+	color: salmon;
+	text-align: center;
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+
+#profileBody {
+	width: 100%;
+}
+
+#roundedHeader {
+	font-family: "Arial Black", Gadget, sans-serif;
+	background-color: indianred;
+	color: ivory;
+	text-align: center;
+	border-style: solid;
+    border-width: 2px;
+    border-color: ivory;
+    border-radius: 5px;
+}
+
+#roundedHeader2 {
+	font-family: "Arial Black", Gadget, sans-serif;
+	background-color: mistyrose;
+	color: coral;
+	text-align: center;
+	border-style: solid;
+    border-width: 2px;
+    border-color: ivory;
+    border-radius: 5px;
+}
+
+#followers {
+	font-family: "Arial Black", Gadget, sans-serif;
+	color: salmon;
+	float: left;
+	width: 500px;
+	background-color: mistyrose;
+	text-align: center;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 0.5%;
+	padding-bottom: 1%;
+	height: 400px;
+	overflow: auto;
+}
+
+#activity {
+	font-family: "Arial Black", Gadget, sans-serif;
+	color: salmon;
+	float: left;
+	width: 500px;
+	background-color: ivory;
+	text-align: center;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 0.5%;
+	padding-bottom: 1%;
+	height: 400px;
+	overflow: auto;
+}
+
+#following {
+	font-family: "Arial Black", Gadget, sans-serif;
+	color: salmon;
+	float: left;
+	width: 500px;
+	background-color: antiquewhite;
+	text-align: center;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 0.5%;
+	padding-bottom: 1%;
+	height: 400px;
+	overflow: auto;
+}
+
+#feed {
+	font-family: "Arial Black", Gadget, sans-serif;
+	background-color: mistyrose;
+	color: salmon;
+	text-align: center;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 0.5%;
+	padding-bottom: 1%;
+	height: 400px;
+	overflow: auto;
+}
+
+.button {
+    background-color: ivory;
+    font-family: "Arial Black", Gadget, sans-serif;
+    border-style: solid;
+    border-width: 1px;
+    width: 70px;
+    height: 20px;
+}
+
+.clickable {
+	color: ivory;
+	background-color: salmon;
+	border: none;
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.name {
+	font-size: 36px;
+}
+
+.username {
+	font-size: 18px;
+	font-style: italic;
+}
+
+.left {
+	text-align: left;
+	padding-left: 25%;
+	padding-right: 25%;
+	margin-right: auto;
+}
+
+.bar {
+	width: 100%;
+}
+
+.circleImage {
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	margin-left: auto;
+    margin-right: auto;
+	overflow: hidden;
+}
+
+.circleImage img {
+	height: 100%;
+	width: auto;
+}
+
+.profile {
+	background-color: #ffcc99;
+}
+
+.searchBody {
+	padding-left: 15%;
+	padding-right: 15%;
+}
+
+.results {
+	overflow: auto;
+	width: 100%;
+	height: 150px;
+	background-color: ivory;
+	color: salmon;
+	border-style: solid;
+    border-radius: 5px;
+    text-align: left;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.feedbuttoncontainer {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 38px;
+	height: 38px;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+.feedbuttonimage {
+	width: 38px;
+	height: 38px;
+}
+
+.searchheader {
+	padding-top: 3px;
+	text-shadow: 1px 2px brown;
+	font-style: italic;
+	font-size: 36px;
+	font-weight: bold;
+	height: 20px;
+	color: gold;
+	font-family: Impact, Charcoal, sans-serif;
+	width: 100%;
+	line-height: 40px;
+	position: relative;
+}
+
+.feedheadertext {
+	position: absolute;
+	top: 2px;
+	left: 46%;
+}
+
+.smallcircleImage {
+	height: 38px;
+	width: 38px;
+	border-radius: 50%;
+	margin-left: auto;
+    margin-right: auto;
+	overflow: hidden;
+}
+
+.profilebuttoncontainer {
+	position: absolute;
+	top: 3px;
+	left: 47px;
+	height: 38px;
+	width: 38px;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+#searchbarcontainer {
+	height: 38px;
+	width: 170px;
+	margin-left: 6px;
+}
+
+.searchbar {
+	position: absolute;
+	color: gray;
+	height: 24px;
+	width: 200px;
+	top: 10px;
+	left: 100px;
+}
+
+#searchchangebuttoncontainer {
+	margin-top: 6px;
+	height: 20px;
+	width: 20px;
+	margin-right: 3px;
+}
+
+.searchchangebutton {
+	width: 20px;
+	height: 20px;
+	background: transparent;
+	border: none;
+	position: absolute;
+	top: 11px;
+	left: 270px;
+}
+
+.searchchangebuttonimage {
+	width: 20px;
+	height: 20px;
+}
+
+#searchbuttoncontainer {
+	margin-top: 7px;
+	float: left;
+	height: 20px;
+	width: 20px;
+	margin-left: 9px;
+	margin-right: 3px;
+}
+
+.searchbuttonimage {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 13px;
+	left: 305px;
+}
+
+.logoutbuttoncontainer {
+	width: 38px;
+	height: 38px;
+	margin-left: 3px;
+	margin-right: 3px;
+	position: absolute;
+	right: 44px;
+	top: 3px;
+}
+
+.logoutbuttonimage {
+	width: 38px;
+	height: 38px;
+}
+
+.exitbuttoncontainer {
+	width: 38px;
+	height: 38px;
+	margin-left: 3px;
+	margin-right: 3px;
+	position: absolute;
+	right: 0px;
+	top: 3px;
+}
+
+.exitbuttonimage {
+	width: 38px;
+	height: 38px;
+}
+
+.clear {
+	clear: both;
+}
+
+.feedprofilebuttoncontainer {
+	height: 100px;
+	width: 100px;
+	float: left;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.feedactionpicture {
+	height:100px;
+	width: 100px;
+	float: left;
+}
+
+.feedmoviepicture {
+	height: 150px;
+	width: 100px;
+	float: left;
+}
+
+.feedratedpicture {
+	height: 25px;
+	width: 100px;
+	float: left;
+}
+
+.feedactionpicturecontainer {
+	height:100px;
+	width: 100px;
+	float: left;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.feedmoviepicturecontainer {
+	height: 150px;
+	width: 100px;
+	float: left;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.circleImageFeed {
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	margin-left: auto;
+    margin-right: auto;
+	overflow: hidden;
+}
+
+.circleImageFeed image {
+	height: 100%;
+	width: auto;
+}
+
+.feedcontainer {
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: auto;
+}
+
+.activityimage {
+	width: 30px;
+	height: 30px;
+	float: left;
+	margin-left: 10%;
+	margin-right: 2%;
+}
+
+.activityratedpicture {
+	width: 120px;
+	height: 30px;
+	float: left;
+	margin-left: 10%;
+	margin-right: 2%;
+}
+
+.activityaction {
+	float: left;
+	margin-right: 5%;
+	margin-top: 2%;
+	color: goldenrod;
+}
+
+.activitymovie {
+	float: right;
+	margin-right: 10%;
+	margin-top: 2%;
+	color: palevioletred;
+}
+
+.cast {
+	font-family: "Arial Black", Gadget, sans-serif;
+	color: salmon;
+	float: left;
+	width: 1500px;
+	background-color: mistyrose;
+	text-align: center;
+	padding-left: 1%;
+	padding-right: 1%;
+	padding-top: 0.5%;
+	padding-bottom: 1%;
+	height: 400px;
+	overflow: auto;
+}
+
+.actorimage {
+	height: 180px;
+	width: 120px;
+	float: left;
+	margin-left: 40%;
+}
+
+.actorname {
+	float: right;
+	margin-right: 40%;
+	margin-top: 2%;
+	color: palevioletred;
+}
+
+.movieimage {
+	height: 225px;
+	width: 150px;
+	float: left;
+	margin-left: 7%;
+}
+
+.movieinfo {
+	text-align: left;
+	margin-left: 21%;
+}
+
+.moviename {
+	text-align: left;
+	margin-left: 21%;
+	font-size: 24px;
+}
+
+.movierating {
+	text-align: left;
+	margin-left: 21%;
+}
+
+.moviedescription {
+	text-align: left;
+	margin-left: 21%;
+}
+
+.floatleft {
+	float: left;
+}
+
+.floatright {
+	float: right;
+}
+
+.noborderbutton {
+	color: salmon;
+	background: transparent;
+	border: none;
+	width: 100%;
+	text-align: left;
+}
+
+p:hover {
+	background-color: mistyrose;
+	color: coral;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<%
+	String errorMessage = (String) session.getAttribute("errorMessage");
+%>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Cinemate</title>
+	<link rel="stylesheet" href = "css/main.css">
+</head>
+<body>
+	<div id="container">
+		<div id="logo">
+			<h1 id="header">Cinemate</h1>
+			Welcome to Cinemate, a Movie Social Media Medium.<br/>
+			Please input a file so that you may begin your experience.<br/>
+			<br/>
+		</div>
+		<div id="main">
+			<div id="input">
+				<form name="parseFile" method="GET" action="ParseServlet">
+		           	<input type="text" name="inputFile" />
+		           	<input type="submit" name="submit" value="Submit" class="button"/><br/>
+		           	<br/>
+		           	<%=errorMessage%>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
