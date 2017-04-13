@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_1cb67a1a5ff343a7ddc6cefec4d0194257c780d3.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Users\user\PradaCollage\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_de71138772689f9b41b987214f033bf8b0618268\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\00eca296b53743bcd07a669e26570c65e89d2aab\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\classes_313dc8229ddd5ea4541bedce16b0cad9df664260.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\Users\user\PradaCollage\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="408287af69f486958afb1cf204208957634076e5">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8ff23c706f726f5d63c9a1dbe0d6a0e2a6a5e8d7\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\05ba4c22afd31422832051ea1f474aea29afc773\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\classes_d55cfcca6b52f9b487d9c7d0dc070746a93c866e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\8237c2a093721e5a0c71ae2f0ba924d565ba2d57\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="23eb0d2998a782213b56168cbf23a0688b9111d9">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\classes_6ccb75a6bcad041588611653e1e9f74b33f70cd0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\47ec607ed0c7c7429769e8fcd7b2a5f2aeddba22\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="820acba36fa86ab15cb3d472b654dedb495075fd">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\classes_95cd8577a59cd9f02c6659e2c5be8767929d6fd5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\c58eb9f12fb73a5fe74a5e154044cd386d17bf7f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\classes_d6ceead1f750c4b4d950436b9337a7a479b64568.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\69b9642090624e9e2c0c005524419f038602c4bb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\classes_af565724f13dd4074d0a5d74c63008255cec9ef3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\58d4eb12a71115fb43fb107f737e9539b318565e\output\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_27f84dc33467e166a634abba9d0634855cb2ab20.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\cb9d77d8939197c5c9dea400a39555f3c7df350e\output\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_a269850fc7ccaf6304b7e3a874c03256c80b1b72.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\c58eb9f12fb73a5fe74a5e154044cd386d17bf7f\output\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_7f6210c68028d57b98aa591af9a40e7eb334593c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.0\support-annotations-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.0_2ffcf1c3ef944ef03bc7038ba0d58336628ec904.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\ab17d6ff9cd1ca1cc70c8f7c6d9c8189af19267e\output\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_fda875ab328590dd09d81223a12fb6c2642f61ce.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\731ebb9b8d64a1a3b11d92658015670c55fb7766\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\classes_04a173c29657bcd17bcb2afae13f1bdfe9e8f8c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\ab17d6ff9cd1ca1cc70c8f7c6d9c8189af19267e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\classes_8a8df1e352bb3bab73ce583fe76876ee6999ea76.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\731ebb9b8d64a1a3b11d92658015670c55fb7766\output\jars\libs\internal_impl-24.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.0_efed53c14981fb2f47cb307c97f9a9d073fb1fd3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\58d4eb12a71115fb43fb107f737e9539b318565e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\classes_0e26d4b352c50dce64280db96e12e56470ca6c02.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\50895ba31af188db46d48b7bf52d46ab058ce20c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="96e33a7aaee00ab64270e2a9887b8f9ef32c8b73">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\classes_0b57d9fa1527d89b5f72ed5d6dc34f4f769dd08c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\31e02e091a317b20724c75ad09cbcc25d235927a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\classes_455ffc9dc1cb59b84ae6864f83df065d056cfc51.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\4c24df0fe9e4a0e584e21664223fbd0d59a646b6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\classes_21b68d5a344a8f6da21227a390b5e5bd67778d8c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.6.1\86b122e640af09b0723e1fa44083c354ba6d9089\glide-3.6.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="86b122e640af09b0723e1fa44083c354ba6d9089">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\glide-3.6.1_21d55a60c2fa8cd616969234beb092a52259524e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.android\build-cache\cb9d77d8939197c5c9dea400a39555f3c7df350e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\classes_26b87cd8c8f4f846faa094d17dddb96e35859aaf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\user\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="E:\Users\user\PradaCollage\app\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0_2e72e302ffd6b79186378a784ce0ab56c1009f7d.jar" />
+    </item>
+
+</items>
