@@ -1,6 +1,7 @@
 package lab.prada.collage;
 
 import android.Manifest;
+import android.animation.Animator;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -44,7 +45,7 @@ import lab.prada.collage.util.StoreImageHelper;
 import lab.prada.collage.util.StoreImageHelper.onSaveListener;
 
 public class MainActivity extends BaseActivity implements OnLabelListener, OnPhotoListener,
-															   View.OnClickListener {
+		View.OnClickListener {
 
 	private static final int SELECT_PHOTO = 0;
 	private static final int ADD_NEW_TEXT = 1;
@@ -111,7 +112,7 @@ public class MainActivity extends BaseActivity implements OnLabelListener, OnPho
 						@Override
 						public PhotoView then(Task<Bitmap> task) throws Exception {
 							PhotoView iv = ComponentFactory.create(ComponentFactory.COMPONENT_IMAGE,
-																   MainActivity.this, photoPanel);
+									MainActivity.this, photoPanel);
 							iv.setListener(MainActivity.this);
 							Bitmap bitmap = task.getResult();
 							// angle
@@ -157,24 +158,24 @@ public class MainActivity extends BaseActivity implements OnLabelListener, OnPho
 					return;
 				}
 				currentSelectedText.setText(txt,
-					intent.getIntExtra(TextEditorActivity.EXTRA_EDITOR_COLOR, Color.BLACK),
-					intent.getBooleanExtra(TextEditorActivity.EXTRA_EDITOR_BORDER, false));
+						intent.getIntExtra(TextEditorActivity.EXTRA_EDITOR_COLOR, Color.BLACK),
+						intent.getBooleanExtra(TextEditorActivity.EXTRA_EDITOR_BORDER, false));
 				currentSelectedText = null;
 				break;
 			default:
 				super.onActivityResult(requestCode, resultCode, intent);
 		}
 	}
-	
+
 	private String getRealPathFromURI(Uri contentURI) {
-	    Cursor cursor = getContentResolver().query(contentURI, null, null, null, null);
-	    if (cursor == null) { // Source is Dropbox or other similar local file path
-	        return contentURI.getPath();
-	    } else { 
-	        cursor.moveToFirst(); 
-	        int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA); 
-	        return cursor.getString(idx); 
-	    }
+		Cursor cursor = getContentResolver().query(contentURI, null, null, null, null);
+		if (cursor == null) { // Source is Dropbox or other similar local file path
+			return contentURI.getPath();
+		} else {
+			cursor.moveToFirst();
+			int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+			return cursor.getString(idx);
+		}
 	}
 
 	private void clearImages() {
@@ -210,7 +211,7 @@ public class MainActivity extends BaseActivity implements OnLabelListener, OnPho
 				 */
 				((ViewGroup) findViewById(R.id.frame_sticks)).removeAllViews();
 				GlassesDetector detector = new GlassesDetector(MainActivity.this,
-															   (ViewGroup) findViewById(R.id.frame_sticks));
+						(ViewGroup) findViewById(R.id.frame_sticks));
 				detector.detectFaces((ViewGroup) findViewById(R.id.frame_images));
 				/*
 				 * showProgressDialog(false); } }).start();
@@ -238,48 +239,72 @@ public class MainActivity extends BaseActivity implements OnLabelListener, OnPho
 	public void labelBringToTop(BaseLabelView view) {
 		currentSelectedText = view;
 		view.bringToFront();
-		Animation myAnim = AnimationUtils.loadAnimation(this,R.anim.my_anim2);
-		view.startAnimation(myAnim);
+		Animation bringfront = AnimationUtils.loadAnimation(this,R.anim.my_anim2);
+		view.startAnimation(bringfront);
 	}
 
 	@Override
 	public void labelPushToBot(BaseLabelView view) {
 		currentSelectedText = view;
 		ViewGroup vg = (ViewGroup) view.getParent();
+		Animation pushback = AnimationUtils.loadAnimation(this,R.anim.my_anim1);
+		view.startAnimation(pushback);
 		if(vg != null) {
 			int viewIndex = -1;
 			viewIndex = vg.indexOfChild(view);
+			Animation moveLeft = AnimationUtils.loadAnimation(this,R.anim.my_anim4);
+			Animation moveRight = AnimationUtils.loadAnimation(this,R.anim.my_anim3);
 			for(int i=vg.getChildCount()-1;i>=0;i--){
 				if(i != viewIndex) {
-					vg.bringChildToFront(vg.getChildAt(i));
+					View tempView = vg.getChildAt(i);
+					if(viewOverlaps(tempView,view)){
+						tempView.startAnimation(moveRight);
+					} else if(viewOverlaps(view,tempView)){
+						tempView.startAnimation(moveLeft);
+					}
+					tempView.bringToFront();
 				}
 			}
-			Animation myAnim = AnimationUtils.loadAnimation(this,R.anim.my_anim1);
-			view.startAnimation(myAnim);
 		}
 	}
 
 	@Override
 	public void photoBringToTop(PhotoView view) {
 		view.bringToFront();
-		Animation myAnim = AnimationUtils.loadAnimation(this,R.anim.my_anim2);
-		view.startAnimation(myAnim);
+		Animation bringfront = AnimationUtils.loadAnimation(this,R.anim.my_anim2);
+		view.startAnimation(bringfront);
 	}
 
 	@Override
 	public void photoPushToBot(PhotoView view) {
 		ViewGroup vg = (ViewGroup) view.getParent();
+		Animation pushback = AnimationUtils.loadAnimation(this,R.anim.my_anim1);
+		view.startAnimation(pushback);
 		if(vg != null) {
 			int viewIndex = -1;
 			viewIndex = vg.indexOfChild(view);
+			Animation moveLeft = AnimationUtils.loadAnimation(this,R.anim.my_anim4);
+			Animation moveRight = AnimationUtils.loadAnimation(this,R.anim.my_anim3);
 			for(int i=vg.getChildCount()-1;i>=0;i--){
 				if(i != viewIndex) {
-					vg.bringChildToFront(vg.getChildAt(i));
+					View tempView = vg.getChildAt(i);
+					if(viewOverlaps(tempView,view)){
+						tempView.startAnimation(moveRight);
+					} else if(viewOverlaps(view,tempView)){
+						tempView.startAnimation(moveLeft);
+					}
+					tempView.bringToFront();
 				}
 			}
 		}
-		Animation myAnim = AnimationUtils.loadAnimation(this,R.anim.my_anim1);
-		view.startAnimation(myAnim);
+	}
+
+	public boolean viewOverlaps(View view1, View view2){
+		int[] pos1 = new int[2];
+		int[] pos2 = new int[2];
+		view1.getLocationOnScreen(pos1);
+		view2.getLocationOnScreen(pos2);
+		return (pos1[0]>=pos2[0])&&((pos1[1]-700<=pos2[1])&&(pos1[1]+700>=pos2[1]));
 	}
 
 	@Override
@@ -300,7 +325,7 @@ public class MainActivity extends BaseActivity implements OnLabelListener, OnPho
 						new OnClickListener() {
 							@Override
 							public void onClick(DialogInterface dialog,
-									int which) {
+												int which) {
 								dialog.dismiss();
 							}
 						}).show();
@@ -341,17 +366,17 @@ public class MainActivity extends BaseActivity implements OnLabelListener, OnPho
 				if(grantResults.length>0&&grantResults[0]== PackageManager.PERMISSION_GRANTED) {
 					showProgressDialog(true);
 					StoreImageHelper.save(getContentResolver(), allViews,
-					new onSaveListener() {
-						@Override
-						public void onSaveSuccess() {
-							showProgressDialog(false);
-						}
-
-						@Override
-						public void onSaveFail() {
+							new onSaveListener() {
+								@Override
+								public void onSaveSuccess() {
 									showProgressDialog(false);
 								}
-					});
+
+								@Override
+								public void onSaveFail() {
+									showProgressDialog(false);
+								}
+							});
 				} else {
 
 				}
