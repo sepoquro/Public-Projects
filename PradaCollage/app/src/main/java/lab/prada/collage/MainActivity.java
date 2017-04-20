@@ -12,6 +12,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -29,6 +30,7 @@ import android.view.animation.AnimationUtils;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 import java.util.concurrent.Callable;
 
 import bolts.Continuation;
@@ -237,7 +239,6 @@ public class MainActivity extends BaseActivity implements OnLabelListener, OnPho
 
 	@Override
 	public void labelBringToTop(BaseLabelView view) {
-		currentSelectedText = view;
 		view.bringToFront();
 		Animation bringfront = AnimationUtils.loadAnimation(this,R.anim.my_anim2);
 		view.startAnimation(bringfront);
@@ -245,7 +246,6 @@ public class MainActivity extends BaseActivity implements OnLabelListener, OnPho
 
 	@Override
 	public void labelPushToBot(BaseLabelView view) {
-		currentSelectedText = view;
 		ViewGroup vg = (ViewGroup) view.getParent();
 		Animation pushback = AnimationUtils.loadAnimation(this,R.anim.my_anim1);
 		view.startAnimation(pushback);
@@ -254,16 +254,20 @@ public class MainActivity extends BaseActivity implements OnLabelListener, OnPho
 			viewIndex = vg.indexOfChild(view);
 			Animation moveLeft = AnimationUtils.loadAnimation(this,R.anim.my_anim4);
 			Animation moveRight = AnimationUtils.loadAnimation(this,R.anim.my_anim3);
-			for(int i=vg.getChildCount()-1;i>=0;i--){
-				if(i != viewIndex) {
-					View tempView = vg.getChildAt(i);
-					if(viewOverlaps(tempView,view)){
-						tempView.startAnimation(moveRight);
-					} else if(viewOverlaps(view,tempView)){
-						tempView.startAnimation(moveLeft);
-					}
-					tempView.bringToFront();
+
+			View tempView = vg.getChildAt(0);
+			while (view != tempView) {
+				Rect r1 = new Rect();
+				view.getDrawingRect(r1);
+				Rect r2 = new Rect();
+				tempView.getDrawingRect(r2);
+				if (r1.contains(r2)&&r1.exactCenterX()>=r2.exactCenterX()) {
+					tempView.startAnimation(moveLeft);
+				} else if (r1.contains(r2)&&r2.exactCenterX()>r1.exactCenterX()) {
+					tempView.startAnimation(moveRight);
 				}
+				tempView.bringToFront();
+				tempView = vg.getChildAt(0);
 			}
 		}
 	}
@@ -281,30 +285,38 @@ public class MainActivity extends BaseActivity implements OnLabelListener, OnPho
 		Animation pushback = AnimationUtils.loadAnimation(this,R.anim.my_anim1);
 		view.startAnimation(pushback);
 		if(vg != null) {
-			int viewIndex = -1;
-			viewIndex = vg.indexOfChild(view);
 			Animation moveLeft = AnimationUtils.loadAnimation(this,R.anim.my_anim4);
 			Animation moveRight = AnimationUtils.loadAnimation(this,R.anim.my_anim3);
-			for(int i=vg.getChildCount()-1;i>=0;i--){
-				if(i != viewIndex) {
-					View tempView = vg.getChildAt(i);
-					if(viewOverlaps(tempView,view)){
-						tempView.startAnimation(moveRight);
-					} else if(viewOverlaps(view,tempView)){
+
+			View tempView = vg.getChildAt(0);
+			int counter = vg.getChildCount()-1;
+			while (view != tempView) {
+				counter--;
+				Rect r1 = new Rect();
+				view.getGlobalVisibleRect(r1);
+				Rect r2 = new Rect();
+				tempView.getGlobalVisibleRect(r2);
+				if(Rect.intersects(r1,r2)) {
+					if (r1.exactCenterX() >= r2.exactCenterX()) {
 						tempView.startAnimation(moveLeft);
+					} else {
+						tempView.startAnimation(moveRight);
 					}
+				}
+				tempView.bringToFront();
+				tempView = vg.getChildAt(0);
+			}
+			int viewIndex = -1;
+			viewIndex = vg.indexOfChild(view);
+			if(viewIndex+1<vg.getChildCount()) {
+				tempView = vg.getChildAt(viewIndex + 1);
+				while (counter > 0) {
 					tempView.bringToFront();
+					tempView = vg.getChildAt(viewIndex + 1);
+					counter--;
 				}
 			}
 		}
-	}
-
-	public boolean viewOverlaps(View view1, View view2){
-		int[] pos1 = new int[2];
-		int[] pos2 = new int[2];
-		view1.getLocationOnScreen(pos1);
-		view2.getLocationOnScreen(pos2);
-		return (pos1[0]>=pos2[0])&&((pos1[1]-700<=pos2[1])&&(pos1[1]+700>=pos2[1]));
 	}
 
 	@Override
