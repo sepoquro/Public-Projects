@@ -250,24 +250,36 @@ public class MainActivity extends BaseActivity implements OnLabelListener, OnPho
 		Animation pushback = AnimationUtils.loadAnimation(this,R.anim.my_anim1);
 		view.startAnimation(pushback);
 		if(vg != null) {
-			int viewIndex = -1;
-			viewIndex = vg.indexOfChild(view);
 			Animation moveLeft = AnimationUtils.loadAnimation(this,R.anim.my_anim4);
 			Animation moveRight = AnimationUtils.loadAnimation(this,R.anim.my_anim3);
 
 			View tempView = vg.getChildAt(0);
+			int counter = vg.getChildCount()-1;
 			while (view != tempView) {
+				counter--;
 				Rect r1 = new Rect();
-				view.getDrawingRect(r1);
+				view.getGlobalVisibleRect(r1);
 				Rect r2 = new Rect();
-				tempView.getDrawingRect(r2);
-				if (r1.contains(r2)&&r1.exactCenterX()>=r2.exactCenterX()) {
-					tempView.startAnimation(moveLeft);
-				} else if (r1.contains(r2)&&r2.exactCenterX()>r1.exactCenterX()) {
-					tempView.startAnimation(moveRight);
+				tempView.getGlobalVisibleRect(r2);
+				if(Rect.intersects(r1,r2)) {
+					if (r1.exactCenterX() >= r2.exactCenterX()) {
+						tempView.startAnimation(moveLeft);
+					} else {
+						tempView.startAnimation(moveRight);
+					}
 				}
 				tempView.bringToFront();
 				tempView = vg.getChildAt(0);
+			}
+			int viewIndex = -1;
+			viewIndex = vg.indexOfChild(view);
+			if(viewIndex+1<vg.getChildCount()) {
+				tempView = vg.getChildAt(viewIndex + 1);
+				while (counter > 0) {
+					tempView.bringToFront();
+					tempView = vg.getChildAt(viewIndex + 1);
+					counter--;
+				}
 			}
 		}
 	}
