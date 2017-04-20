@@ -250,24 +250,10 @@ public class MainActivity extends BaseActivity implements OnLabelListener, OnPho
 		Animation pushback = AnimationUtils.loadAnimation(this,R.anim.my_anim1);
 		view.startAnimation(pushback);
 		if(vg != null) {
-			Animation moveLeft = AnimationUtils.loadAnimation(this,R.anim.my_anim4);
-			Animation moveRight = AnimationUtils.loadAnimation(this,R.anim.my_anim3);
-
 			View tempView = vg.getChildAt(0);
 			int counter = vg.getChildCount()-1;
 			while (view != tempView) {
 				counter--;
-				Rect r1 = new Rect();
-				view.getGlobalVisibleRect(r1);
-				Rect r2 = new Rect();
-				tempView.getGlobalVisibleRect(r2);
-				if(Rect.intersects(r1,r2)) {
-					if (r1.exactCenterX() >= r2.exactCenterX()) {
-						tempView.startAnimation(moveLeft);
-					} else {
-						tempView.startAnimation(moveRight);
-					}
-				}
 				tempView.bringToFront();
 				tempView = vg.getChildAt(0);
 			}
